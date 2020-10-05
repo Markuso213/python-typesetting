@@ -26,9 +26,9 @@ class basicShapes:
         tC.canvas.drawPath(p, stroke=1, fill=1)
         tC.canvas.restoreState()
 
-    def drawSquare(self, tC, x, y, setFillGray = 0.8, size=5):
+    def drawBulletSquare(self, tC, x, y, setFillGray = 0.8, size=5):
         '''
-        Draws a basic square
+        Draws a basic square for bullet lists
         '''
         self.drawShape(tC, points = [
             (x, y),
@@ -37,17 +37,18 @@ class basicShapes:
             (x, y+size)
             ], setFillGray = setFillGray)
 
-    def drawTriangle(self, tC, p1,p2,p3):
-            ''' Draws basic triangle '''
+    def drawMarkerTriangle(self, tC, p1,p2,p3):
+            ''' Draws basic triangle used for markers '''
+            #TODO update point definitions to match the main style 
 
-            c.setFillColor('lime')
-            c.setStrokeColor('lime')
-            p = c.beginPath()
+            tC.canvas.setFillColor('lime')
+            tC.canvas.setStrokeColor('lime')
+            p = tC.canvas.beginPath()
 
             p.moveTo(*p1)
             p.lineTo(*p2)
             p.lineTo(*p3)
             p.lineTo(*p1)
 
-            c.drawPath(p, fill=1)
+            tC.canvas.drawPath(p, fill=1)
 
